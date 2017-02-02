@@ -62,11 +62,6 @@ def show_category(request, category_name_slug):
 	return render(request, 'rango/category.html', context_dict)
 
 def index(request):
-	# return HttpResponse("Rango says hey there partner!<br><a href='/rango/about/'>About</a>")1
-
-	# context_dict = {'boldmessage': "Crunchy, creamy, cookie, candy, cupcake!"}
-	# return render(request, 'rango/index.html', context=context_dict)2
-
 	category_list = Category.objects.order_by('-likes')[:5]
 	pages_list = Page.objects.order_by('-views')[:5]
 	context_dict = {'categories': category_list, 'pages': pages_list}
@@ -75,5 +70,4 @@ def index(request):
 
 
 def about(request):
-	# return HttpResponse("Rango says here is the about page.<br><a href='/rango/'>Index</a>")
 	return render(request, 'rango/about.html', context={})
