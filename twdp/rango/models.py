@@ -14,7 +14,7 @@ class Category(models.Model):
 		super(Category, self).save(*args, **kwargs)
 
 	class Meta:
-		verbose_name_plural = 'categories' # fix the bad grammar, very important 
+		verbose_name_plural = 'categories' # fix the bad grammar, very important
 
 	def __str__(self):
 		return self.name
@@ -37,7 +37,7 @@ class Page(models.Model):
 
 
 class UserProfile(models.Model):
-	user = models.OneToOneField(User) # links UserProfile to a User model instance
+	user = models.OneToOneField(User) # links UserProfile to a User model instance 
 
 	website = models.URLField(blank=True)
 	picture = models.ImageField(upload_to='profile_images', blank=True)
